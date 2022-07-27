@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin_Master.master.cs" Inherits="DoAnThuongMaiDienTu.Admin_Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .active{
+            background-color:olive;
+            color:#fff;
+        }
+
+        #form1, html, body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .nav {
+            width: 10%;
+            height: 100%;
+            background: #ec495e;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+            .nav .menu {
+                display: flex;
+                width: 100%;
+                height: 80%;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                padding: 40px 10px 20px 10px;
+            }
+
+                .nav .menu .logo {
+                    margin-top: 40px;
+                    max-width: 100%;
+                }
+
+                .nav .menu ul {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    height: 80%;
+                    list-style: none;
+                }
+
+                .nav .menu li {
+                    width: 100%;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+
+                .nav .menu ul a {
+                    display: block;
+                    padding: 10px;
+                    background: white;
+                    text-align: center;
+                    font-weight: 600;
+                    color: #232323;
+                    text-decoration: none;
+                }
+
+                .nav .menu li:hover a {
+                    background: chocolate;
+                }
+
+        #form1 {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="nav">
+            <div class="menu">
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Web_View/MasterPage/images/logo.png" CssClass="logo" />
+                <ul>
+                    <li>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" CssClass="active">PRODUCT</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton7" runat="server" OnClick="LinkButton7_Click">ORDER</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">ACCOUNT</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">CONTACT</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">BLOG</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">GALLERY</asp:LinkButton></li>
+
+                </ul>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <script>
+        function thongBao(thongbao) {
+            alert(thongbao);
+        }
+        let linknav = document.querySelectorAll(".nav a");
+        linknav.forEach(el => {
+            el.onclick = function () {
+                for (let i = 0; i < linknav.length; i++) {
+                    linknav[i].classList.remove("active");
+                }
+            }
+            el.classList.add("active");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterNavFull.master.cs" Inherits="DoAnThuongMaiDienTu.Web_View.MasterPage.MasterNavFull" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        rel="stylesheet" />
+    <link href="CSSMasterNav.css" rel="stylesheet" />
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="nav">
+            <div class="menu">
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Web_View/MasterPage/images/logo.png" CssClass="btn-logo" OnClick="ImageButton1_Click" />
+                <ul>
+                    <li>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">HOME</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton7" runat="server" OnClick="LinkButton7_Click">STORE</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">ABOUT</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">BLOG</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">GALLERY</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">CONTACT</asp:LinkButton></li>
+                    <li class="credit">
+                        <div class="drop-head">
+                            <i class="fa-solid fa-cart-shopping" style="color: white"></i>
+                            <label class="credit-num"></label>
+                        </div>
+                        <div class="dropdown">
+                            <div style="display: flex; justify-content: space-between">
+                                <h2>My cart</h2>
+                                <asp:LinkButton ID="LinkButton8" runat="server" OnClick="LinkButton8_Click">
+                                    <i class="fa-solid fa-rotate" style="transform:translateY(2px)"></i>
+                                </asp:LinkButton>
+                            </div>
+
+                            <div class="dropdown-cart">
+                                <asp:DataList ID="DataList1" runat="server" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
+                                    <ItemTemplate>
+                                        <div class="dropdown-cart_item">
+                                            <asp:Image ID="Image1" runat="server" ImageUrl='<%#"~/Web_View/Home/images/"+Eval("hinhanh") %>' CssClass="cart_image" />
+                                            <div class="dropdown-cart_item_desc">
+                                                <asp:Label ID="Label1" runat="server" Text='<%#Eval("tenmon") %>' CssClass="cart_title"></asp:Label>
+                                                <p>
+                                                    <asp:Label ID="Label2" runat="server" Text='<%#Eval("soluong") %>' CssClass="cart_number"></asp:Label>
+                                                    x
+                      <asp:Label ID="Label3" runat="server" Text='<%#"$"+Eval("dongia") %>' CssClass="cart_price"></asp:Label>
+                                                </p>
+                                            </div>
+                                            <div class="dropdown_cart_close">
+                                                <i class="fa-solid fa-xmark"></i>
+                                                <asp:Button ID="Button2" runat="server" Text="" CssClass="dropdown_cart_close-btn" OnClick="Button2_Click1" CommandArgument='<%#Eval("mamon") %>'/>
+                                            </div>
+                                        </div>
+
+                                    </ItemTemplate>
+                                </asp:DataList>
+                                <div class="dropdown_total">
+                                    <p>SUBTOTAL: <span class="sum_total"></span></p>
+                                </div>
+                                <div class="dropdown_cart_payment">
+                                    <div class="payment_all">
+                                        <asp:Button ID="Button3" runat="server" Text="PAYMENT" CssClass="btn" OnClick="Button3_Click"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="credit" style="padding: 0">
+                        <div class="drop-head">
+                            <asp:LinkButton ID="LinkButton9" runat="server" CssClass="btn-dk" OnClick="LinkButton6_Click">Đăng ký</asp:LinkButton>
+
+                        </div>
+                        <div class="dropdown credit-dn">
+                            <div class="register">
+                                <asp:Label ID="Label8" runat="server" Text="MỜI BẠN ĐĂNG KÝ" CssClass="title-dk"></asp:Label><br />
+                                <asp:Label ID="Label9" runat="server" Text="Tài khoản" CssClass="lbldk-dk"></asp:Label>
+                                <asp:TextBox ID="TextBox4" runat="server" CssClass="txt-dk"></asp:TextBox><br />
+                                <asp:Label ID="Label10" runat="server" Text="Mật khẩu" CssClass="lbldk-dk"></asp:Label>
+                                <asp:TextBox ID="TextBox5" runat="server" CssClass="txt-dk" TextMode="Password"></asp:TextBox><br />
+                                <asp:Label ID="Label11" runat="server" Text="Nhập lại mật khẩu" CssClass="lbldk-dk"></asp:Label>
+                                <asp:TextBox ID="TextBox6" runat="server" CssClass="txt-dk" TextMode="Password"></asp:TextBox><br />
+                                <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Mật khẩu nhập lại sai!" ControlToCompare="TextBox5" ControlToValidate="TextBox6" Font-Bold="True" ForeColor="Red"></asp:CompareValidator>
+                                <asp:Button ID="Button5" runat="server" Text="ĐĂNG KÝ" CssClass="btn-dk1" OnClick="Button1_Click" />
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="credit test1">
+                        <div class="drop-head dangnhap">
+                            <i class="fa-solid fa-user" style="color: white"></i>
+                            <asp:Label ID="Label4" runat="server" Text="" style="margin-left:6px;transform:translateY(1px)"></asp:Label>
+                        </div>
+                        <div style="position: absolute; width: 100%" class="dangxuat">
+                            <asp:Button ID="Button4" runat="server" Text="Button" OnClick="Button4_Click" />
+                        </div>
+                        <div class="dropdown credit-dn">
+                            <div class="login">
+                                <asp:Login ID="Login1" runat="server" LoginButtonText="ĐĂNG NHẬP" PasswordLabelText="Mật khẩu:" RememberMeText="Nhớ mật khẩu?" TitleText="MỜI BẠN ĐĂNG NHẬP" UserNameLabelText="Tài khoản" OnAuthenticate="Login1_Authenticate" RememberMeSet="True">
+                                    <LoginButtonStyle CssClass="login-btn" />
+                                    <TitleTextStyle CssClass="title-login" />
+                                    <LabelStyle CssClass="lable-login" />
+                                    <TextBoxStyle CssClass="txt-login" />
+                                    <CheckBoxStyle CssClass="checkbox-login" />
+                                </asp:Login>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="footer">
+            <div class="footer_content">
+                <div class="footer_about">
+                    <h4>About Us</h4>
+                    <p>
+                        Visit our restaurant to experience our relaxing atmosphere, to find
+            a peace of mind and to enjoy our diverse, delicious, gourmet menu.
+            Our extensive choice of side and main dishes and appetizers, as well
+            as NA and alcoholic beverages are made to make your taste buds
+            happy!
+                    </p>
+                </div>
+                <div class="footer_contact">
+                    <h4>Contacts Us</h4>
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>6087 Richmond hwy,
+            Alexandria, VA
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-clock"></i>Mo-Fr 11:00-00:00, Sa-Sa
+            15:00-00:00
+                    </p>
+                    <p><i class="fa-solid fa-phone-flip"></i><span>0905000111</span></p>
+                    <p><i class="fa-solid fa-envelope"></i><span>mail@gmail.com</span></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function thongBao(thongbao) {
+                alert(thongbao);
+            }
+            //Tổng đơn giá
+            let tong = document.querySelector(".sum_total");
+            let carts = document.querySelectorAll(".dropdown-cart_item");
+
+            let total = 0;
+            carts.forEach((el) => {
+                let sl = el.querySelector(".cart_number").innerHTML;
+                let gia = Number.parseFloat(
+                    el.querySelector(".cart_price").innerHTML.slice(1).replace(",", ".")
+                );
+                console.log(sl, gia);
+                total = total * 1 + sl * gia;
+            });
+            tong.innerHTML = "$" + Math.round(total * 100) / 100;
+
+            let credit_num = document.querySelector(".credit-num");
+            credit_num.innerHTML = carts.length;
+
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(";");
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == " ") {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+            //
+            let icon_dangnhap = document
+                .querySelector(".dangnhap")
+                .querySelector("i");
+            if (getCookie("tendn") != "") {
+                icon_dangnhap.classList.remove("fa-user");
+                icon_dangnhap.classList.add("fa-arrow-right-from-bracket");
+                document.querySelector(".test1 .dropdown").classList.add("hidden");
+                document.getElementById("Button4").style.display = "block";
+            } else {
+                document.getElementById("Button4").style.display = "none";
+            }
+            let test1 = document.querySelector(".test1");
+            test1.onclick = function () {
+                if (
+                    icon_dangnhap.classList.contains("fa-arrow-right-from-bracket")
+                ) {
+                    icon_dangnhap.classList.add("fa-user");
+                    icon_dangnhap.classList.remove("fa-arrow-right-from-bracket");
+                    document.querySelector(".test1 .dropdown").classList.remove("hidden");
+                }
+            };
+
+        </script>
+    </form>
+</body>
+</html>

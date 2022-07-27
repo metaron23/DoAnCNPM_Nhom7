@@ -1,0 +1,469 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+a {
+    text-decoration: none;
+}
+.hidden {
+    display:none;
+}
+#form1 {
+    width: 100%;
+    height: 100%;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+.credit-dn {
+    min-width: 330px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #808080;
+}
+
+.credit .credit-num {
+    color: #fff;
+    margin: 0;
+    margin-left: 4px;
+}
+
+.credit-dn td {
+    margin-right: 10px;
+    text-align: center;
+}
+/* navbar */
+.nav {
+    width: 100%;
+    height: 80px;
+    background-color: #222222;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+    .nav .menu {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;        
+    }
+
+        .nav .menu ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            transform: translateY(8px);
+        }
+
+        .nav .menu a {
+            display: inline-block;
+            color: white;
+            transition: 0.5s;
+        }
+
+        .nav .menu li {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+    .nav .credit {
+        position: relative;
+    }
+
+        .nav .credit .dropdown {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.5s;
+            padding: 20px;
+            background-color: white;
+            white-space: nowrap;
+            top: 150%;
+            right: 0;
+            transition: 0.5s ease;
+            min-width: 250px;
+        }
+
+        .nav .credit span {
+            color: #EEEEEE;
+        }
+
+.dropdown {
+    border-radius: 4px;
+}
+
+    .dropdown h2 {
+        padding: 0 0 10px 0;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+.nav .menu li:hover a {
+    color: red;
+    transition: 0.5s;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn-logo:hover {
+    opacity: 0.6;
+}
+
+.nav .credit:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+    transition: 0.8s;
+}
+
+.nav .credit h2 {
+    font-size: 25px;
+}
+
+.nav .dropdown-cart {
+    display: flex;
+    flex-direction: column;
+}
+
+.drop-head {
+    display: flex;
+    align-items: center;   
+}
+.dangxuat{
+    position:absolute;
+    width:100%;
+    display:block;
+    inset:0;
+    opacity:0;
+}
+
+.nav .dropdown-cart_item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 300px;
+    margin-top: 10px;
+}
+
+    .nav .dropdown-cart_item .cart_image {
+        height: 70px;
+        width: 70px;
+        margin-right: 10px;
+        transform: translateY(-6px);
+    }
+
+    .nav .dropdown-cart_item .cart_title {
+        font-size: 16px;
+        color: #232323;
+    }
+
+    .nav .dropdown-cart_item .cart_price {
+        font-size: 14px;
+        color: red;
+        font-weight: 500;
+    }
+
+    .nav .dropdown-cart_item .cart_number {
+        font-size: 16px;
+        color: red;
+    }
+
+.nav .dropdown-cart_item_desc {
+    flex: 1;
+}
+
+.nav .dropdown-cart_item .dropdown_cart_close {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 5%;
+    transform: translateY(-5%);
+    right: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    transform: translateY(5px);
+}
+#DataList1_Button2_0{
+    width:40px;
+    height:40px;
+    transform:translateY(5px);
+    z-index:2000;
+}
+
+.dropdown_cart_close {
+    position: relative;
+    width: 100%;
+}
+
+    .dropdown_cart_close .dropdown_cart_close-btn {
+        width: 100%;
+        border: none;
+        background: transparent;
+    }
+
+    .dropdown_cart_close:hover i {
+        color: #EC495E;
+    }
+
+    .dropdown_cart_close i {
+        position: absolute;
+        z-index: 20;
+        font-size: 22px;
+        transform: translateY(2px);
+    }
+
+.dropdown_cart_payment {
+    width: 100%;
+    margin: auto;
+    background-color: #EC495E;
+    border: 1px solid #EC495E;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+    .dropdown_cart_payment .payment_all {
+        position: relative;
+        margin: auto;
+        display: block;
+    }
+
+    .dropdown_cart_payment .btn {
+        color: #fff;
+        width: 100%;
+    }
+
+    .dropdown_cart_payment:hover {
+        background-color: #fff;
+        color: #EC495E;
+    }
+
+        .dropdown_cart_payment:hover .btn {
+            color: #EC495E;
+        }
+
+.nav .dropdown_total {
+    margin-top: 20px;
+}
+
+    .nav .dropdown_total .sum_total {
+        margin-left: 20px;
+        font-size: 20px;
+        color: red;
+        font-weight: 500;
+    }
+
+.nav .dropdown button {
+    width: 100%;
+    padding: 5px 10px;
+    border: 2px solid red;
+    background-color: white;
+    color: red;
+    display: block;
+    margin-bottom: 5px;
+}
+
+    .nav .dropdown button i {
+        margin-right: 10px;
+    }
+
+    .nav .dropdown button:hover {
+        color: white;
+        background: red;
+    }
+/* looking  */
+.looking {
+    width: 100%;
+    height: 60%;
+    background-image: url(./looking_bg.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.looking_content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    max-width: 500px;
+}
+
+    .looking_content h4 {
+        font-family: "Satisfy", Sans-serif;
+        color: #e6be99;
+    }
+
+.footer {
+    height: 50%;
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .footer .footer_content {
+        color: white;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 80%;
+    }
+
+.footer_contact, .footer_about {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer h4 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+.footer .footer_contact h4 {
+    margin-top: 5px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 100;
+    line-height: 24px;
+}
+
+.footer .footer_contact p {
+    font-size: 14px;
+}
+
+.footer .footer_contact i {
+    margin-right: 10px;
+}
+
+.footer .footer_content span {
+    transition: 0.5s ease all;
+    cursor: pointer;
+}
+
+    .footer .footer_content span:hover {
+        color: rgba(215, 62, 62, 0.842);
+    }
+
+
+/*đăng nhập*/
+.login {
+}
+
+.credit .dropdown.credit-dn {
+    padding: 10px;
+    background-color: #ccc;
+}
+
+.btn-dk {
+    padding-left: 10px;
+    display: block;
+}
+
+    .btn-dk:hover {
+        opacity: 0.4;
+    }
+
+.login1 table td {
+    font-size: 18px;
+}
+
+.login-btn {
+    margin: auto;
+    display: block;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e24343;
+    color: #fff;
+}
+
+    .login-btn:hover {
+        background-color: #ccc;
+        color: #e24343;
+        border: 1px solid red;
+    }
+
+.title-login {
+    font-size: 20px;
+    padding-bottom: 16px;
+    color: #e24343;
+}
+
+.lable-login {
+    font-size: 14px;
+    margin-left: 6px;
+    display: block;
+}
+
+.credit-dn .lable-login {
+    text-align: right;
+}
+
+.txt-login {
+    transform: translateY(-4px);
+}
+
+.checkbox-login {
+    transform: translateX(24px);
+}
+
+#Login1_RememberMe {
+    display: inline-block;
+    margin-right: 6px;
+}
+/*đăng nhập*/
+/*Đăng ký*/
+.nav .register{
+    padding:10px;
+}
+.nav .credit .title-dk {
+    font-size: 20px;
+    color: #e24343;
+    text-align: center;
+    display: block;
+}
+
+.nav .credit .lbldk-dk {
+    color:#232323;
+    display:block;
+    padding-right:10px;
+}
+
+.btn-dk1 {
+    margin: auto;
+    display: block;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e24343;
+    color: #fff;
+    margin-top:10px;
+}
+.nav .txt-dk{
+    width:100%;
+}
+
+    .btn-dk1:hover {
+        background-color: #ccc;
+        color: #e24343;
+        border: 1px solid red;
+    }
+/*Đăng ký*/

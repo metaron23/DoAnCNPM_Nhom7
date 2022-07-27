@@ -1,0 +1,97 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: block;
+    margin: auto;
+    margin-top: 80px;
+    font-family: Arial;
+}
+
+#LinkButton4 {
+    color: red;
+}
+
+.link-content {
+    padding: 20px 0;
+}
+
+.link-btn {
+    color: #BDBDBD;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+    .link-btn:hover {
+        color: #EC495E !important;
+        cursor: pointer;
+        text-decoration: none
+    }
+
+.btn-active {
+    color: #EC495E;
+}
+
+.atmosphere {
+    background-image: url(../Gallery/images/home-7.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+    .atmosphere h3 {
+        font-size: 60px;
+        color: #fff;
+        font-weight: 100;
+        letter-spacing: 8px;
+    }
+
+.slash {
+    color: #BDBDBD;
+    margin-right: 8px;
+}
+
+.desc {
+    display: block;
+    text-align: center;
+    padding: 50px 0;
+}
+
+    .desc h2 {
+        display: inline-block;
+        color: #2b2f3e;
+        font-size: 32px;
+        font-weight: 100;
+        margin-bottom: 8px;
+    }
+
+    .desc p {
+        display: inline-block;
+        color: #767675;
+        font-size: 18px;
+        font-weight: 100;
+        line-height: 36px;
+    }
+
+.gallery {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.g-img {
+    display: block;
+    width: 100%;
+    padding: 0 5px;
+}

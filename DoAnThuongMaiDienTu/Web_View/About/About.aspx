@@ -1,0 +1,159 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_View/MasterPage/MasterNavFull.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="DoAnThuongMaiDienTu.About" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSSAbout1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container">
+        <div class="link">
+            <div class="link-content">
+                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="link-btn" OnClick="LinkButton1_Click">Home</asp:LinkButton>
+                <span class="slash">/</span>
+                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="link-btn btn-active">About</asp:LinkButton>
+            </div>
+        </div>
+        <div class="about-bg">
+        </div>
+        <div class="desc">
+            <p>
+                Bettaso is a place defined by our main philosophy. 
+                Which is to keep things simple, tasty and create a home-like cozy atmosphere for our Restaurant’s visitors.
+            </p>
+        </div>
+        <div class="prize">
+            <div class="items">
+                <div class="items-img">
+                    <img width="80" height="80" src="images/icon_prize1.jpg" alt="img">
+                </div>
+                <div class="items-header">
+                    <p>
+                        Open Table Dinners
+                    </p>
+                </div>
+                <div class="items-star">
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                </div>
+            </div>
+            <div class="items">
+                <div class="items-img">
+                    <img width="80" height="80" src="images/icon-prize2.jpg" alt="img">
+                </div>
+                <div class="items-header">
+                    <p>
+                        Open Table Dinners
+                    </p>
+                </div>
+                <div class="items-star">
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                </div>
+            </div>
+            <div class="items">
+                <div class="items-img">
+                    <img width="80" height="80" src="images/icon-prize3.jpg" alt="img">
+                </div>
+                <div class="items-header">
+                    <p>
+                        Open Table Dinners
+                    </p>
+                </div>
+                <div class="items-star">
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                </div>
+            </div>
+            <div class="items">
+                <div class="items-img">
+                    <img width="80" height="80" src="images/icon-prize4.jpg" alt="img">
+                </div>
+                <div class="items-header">
+                    <p>
+                        Open Table Dinners
+                    </p>
+                </div>
+                <div class="items-star">
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-desc">
+                <h2 style="font-weight: 300; padding: 50px 0; font-size: 22px; color: #2b2f3e;line-height: 44px;font-family:sans-serif;">Coming to us for a lunch or a dinner should feel just as comfortable, as having one at home. 
+                    The simplicity, freshness and reasonable pricing for our dishes just underlines how home-like our Restaurant is..
+                </h2>
+            </div>
+        </div>
+        <div class="content-bg">
+        </div>
+        <div class="content" style="margin-top: 50px">
+            <div class="content-desc">
+                <h2 style="font-weight: 300; font-size: 24px; color: #2b2f3e; display: block; margin-bottom: 20px; text-align: center;">Meet our team
+                </h2>
+                <p style="font-size: 18px; font-weight: 200; color: #2b2f3e; line-height: 28px">
+                    Bettaso is a family owned Restaurant, which treasures the atmosphere just as much as the dining menu. We assembled a strong team of professionals, all of whom aspire to constantly excel and step it up!
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </p>
+            </div>
+        </div>
+        <div class="character">
+            <div class="left1">
+            </div>
+            <div class="right">
+                <div class="r-desc">
+                    <h2 style="font-weight: 300; font-size: 24px; color: #2b2f3e;">Simon Wicked
+                    </h2>
+                    <p style="font-size: 18px; color: #bdbdbd; display: block; margin: 14px 0;">
+                        Sous chef
+                    </p>
+                    <p style="font-size: 16px; font-weight: 200; color: #2b2f3e; line-height: 28px">
+                        Mary is the most experienced chef in our culinary team. She graduated from Parisian Culinary school 15 years ago and since then only excelled her skills. Now she has 2 sous-chefs to assist her. 
+                        They help her cook our dishes as good as only possible
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="character">
+            <div class="left2">
+            </div>
+            <div class="right">
+                <div class="r-desc">
+                    <h2 style="font-weight: 300; font-size: 24px; color: #2b2f3e;">Simon Wicked
+                    </h2>
+                    <p style="font-size: 18px; color: #bdbdbd; display: block; margin: 14px 0;">
+                        Sous chef
+                    </p>
+                    <p style="font-size: 16px; font-weight: 200; color: #2b2f3e; line-height: 28px">
+                        Mary is the most experienced chef in our culinary team. She graduated from Parisian Culinary school 15 years ago and since then only excelled her skills. Now she has 2 sous-chefs to assist her. 
+                        They help her cook our dishes as good as only possible
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="character">
+            <div class="left3">
+            </div>
+            <div class="right">
+                <div class="r-desc">
+                    <h2 style="font-weight: 300; font-size: 24px; color: #2b2f3e;">Simon Wicked
+                    </h2>
+                    <p style="font-size: 18px; color: #bdbdbd; display: block; margin: 14px 0;">
+                        Sous chef
+                    </p>
+                    <p style="font-size: 16px; font-weight: 200; color: #2b2f3e; line-height: 28px">
+                        Mary is the most experienced chef in our culinary team. She graduated from Parisian Culinary school 15 years ago and since then only excelled her skills. Now she has 2 sous-chefs to assist her. 
+                        They help her cook our dishes as good as only possible
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</asp:Content>
